@@ -10,18 +10,15 @@ using UnityEditor;
 public class TitleUIManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField playerNameInput;
-    private string playerName;
-    private Color backgroundColor;
     // Start is called before the first frame update
     public void StartNew()
     {
         if(playerNameInput.text.Length>0){
-            playerName=playerNameInput.text;
-            Debug.Log("Player name: "+playerName); 
+            AppPreferences.Instance.playerName=playerNameInput.text;
             SceneManager.LoadScene(1);
 
         }else{
-            Debug.Log("You must input your name.");
+            Debug.LogError("You must input a name.");
         }
         
     }
