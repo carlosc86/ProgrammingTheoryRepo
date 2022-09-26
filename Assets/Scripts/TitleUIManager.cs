@@ -11,6 +11,9 @@ public class TitleUIManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField playerNameInput;
     // Start is called before the first frame update
+    void Start(){
+        playerNameInput.text=AppPreferences.Instance.playerName;
+    }
     public void StartNew()
     {
         if(playerNameInput.text.Length>0){

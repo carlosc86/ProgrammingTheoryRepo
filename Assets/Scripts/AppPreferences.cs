@@ -17,7 +17,7 @@ public class AppPreferences : MonoBehaviour
 
     void Awake(){
         if(Instance!=null){
-            Instance=null;
+            Destroy(gameObject);
             return;
         }
         Instance=this;
