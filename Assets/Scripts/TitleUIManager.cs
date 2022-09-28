@@ -10,7 +10,15 @@ using UnityEditor;
 public class TitleUIManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField playerNameInput;
+    
     // Start is called before the first frame update
+    void Start(){
+        playerNameInput.text=AppPreferences.Instance.playerName;
+        if(AppPreferences.Instance.backgroundChange){
+            GameObject.Find("Background").GetComponent<Renderer>().material.color=AppPreferences.Instance.backgroundColor; 
+        }
+        
+    }
     public void StartNew()
     {
         if(playerNameInput.text.Length>0){
