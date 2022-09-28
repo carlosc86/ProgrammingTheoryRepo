@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereShape : Shape
+public class SphereShape : Shape // INHERITANCE
 {
     private float radius;//private, not accesible by other class
     protected override float Area()

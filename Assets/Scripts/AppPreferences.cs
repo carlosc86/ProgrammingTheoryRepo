@@ -7,10 +7,12 @@ public class AppPreferences : MonoBehaviour
     public static AppPreferences Instance {get; private set;}//read only
     private Color m_BackgroundColor;
     public string playerName;
+    public bool backgroundChange {get;private set;}=false;
     public Color backgroundColor {get{return m_BackgroundColor;}
                                   set{
                                     if(value!=null){//not null validation
                                         m_BackgroundColor=value;
+                                        backgroundChange=true;
                                     }
                                     }
                                  }
@@ -23,4 +25,6 @@ public class AppPreferences : MonoBehaviour
         Instance=this;
         DontDestroyOnLoad(gameObject);
     }
+
+    
 }

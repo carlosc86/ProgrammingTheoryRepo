@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CubeShape : Shape
+public class CubeShape : Shape // INHERITANCE
 {
     [SerializeField]private TMP_InputField sideInput;
     
-    private float m_side;
-    //[SerializeField]private TMP_InputField inputSide;
+    // ENCAPSULATION
+    private float m_side;    
     public float side   {get{return m_side;}
                         set {
                             if(value>0){
@@ -28,6 +28,7 @@ public class CubeShape : Shape
         shapeName="Cube";
         shapeInfo="A symmetrical three-dimensional shape, either solid or hollow, contained by six equal squares.";
     }
+    // POLYMORPHISM
     public override void CalculateArea(){
         side=float.Parse(sideInput.text);//obtain the data of the input field
         base.CalculateArea();

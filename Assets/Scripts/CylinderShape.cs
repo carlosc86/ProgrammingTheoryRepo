@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CylinderShape : Shape
+public class CylinderShape : Shape // INHERITANCE
 {
     [SerializeField]private TMP_InputField radiusInput;
     [SerializeField]private TMP_InputField heightInput;
-    private float radius;
-    private float height;
+    public float radius{get;private set;}// ENCAPSULATION
+    public float height{get;private set;}// ENCAPSULATION
     protected override float Area()
     {
         return 2*Mathf.PI*radius*(height+radius);
@@ -21,6 +21,7 @@ public class CylinderShape : Shape
         shapeInfo="A solid geometrical figure with straight parallel sides and a circular or oval cross section.";
     }
 
+    // POLYMORPHISM
     public override void CalculateArea(){
         radius=float.Parse(radiusInput.text);
         height=float.Parse(heightInput.text);
